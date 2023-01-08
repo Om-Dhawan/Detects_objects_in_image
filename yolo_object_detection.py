@@ -2,9 +2,9 @@ import cv2
 import numpy as np
 
 # Load Yolo
-net = cv2.dnn.readNet("./object_detection/yolo_object_detection/yolov3.weights", "./object_detection/yolo_object_detection/yolov3.cfg")
+net = cv2.dnn.readNet("./yolov3.weights", "./yolov3.cfg")
 classes = []
-with open("./object_detection/yolo_object_detection/coco.names", "r") as f:
+with open("./coco.names", "r") as f:
     classes = [line.strip() for line in f.readlines()]
 layer_names = net.getLayerNames()
 output_layers = [layer_names[i - 1] for i in net.getUnconnectedOutLayers()]
